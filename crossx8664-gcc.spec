@@ -6,7 +6,7 @@ Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - AMD64 gcc
 Summary(tr):	GNU geliþtirme araçlarý - AMD64 gcc
 Name:		crossamd64-gcc
 Version:	3.4.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
