@@ -12,10 +12,12 @@ License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
 # Source0-md5:	e744b30c834360fccac41eb7269a3011
+URL:		http://gcc.gnu.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bison
 BuildRequires:	crossamd64-binutils
 BuildRequires:	flex
-BuildRequires:	bison
-BuildRequires:	autoconf
 BuildRequires:	/bin/bash
 Requires:	crossamd64-binutils
 Requires:	gcc-dirs
