@@ -9,14 +9,16 @@ Summary(pl):	Skro¶ne narzêdzia programistyczne GNU dla AMD64 - gcc
 Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - AMD64 gcc
 Summary(tr):	GNU geliþtirme araçlarý - AMD64 gcc
 Name:		crossamd64-gcc
-%define		_snap	20040827
+#define		_snap	20040827
 Version:	3.4.2
-Release:	0.%{_snap}.1
+#Release:	0.%{_snap}.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://gcc.gnu.org/pub/gcc/snapshots/3.4-%{_snap}/gcc-3.4-%{_snap}.tar.bz2
-# Source0-md5:	a1b3041177090adab4098e3ad4099dd8
+#Source0:	ftp://gcc.gnu.org/pub/gcc/snapshots/3.4-%{_snap}/gcc-3.4-%{_snap}.tar.bz2
+Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
+# Source0-md5:	2fada3a3effd2fd791df09df1f1534b3
 BuildRequires:	crossamd64-binutils
 BuildRequires:	flex
 BuildRequires:	bison
@@ -48,7 +50,8 @@ maszynach binariów do uruchamiania na AMD64 (architektura
 amd64-linux).
 
 %prep
-%setup -q -n gcc-3.4-%{_snap}
+#setup -q -n gcc-3.4-%{_snap}
+%setup -q -n gcc-%{version}
 
 %build
 rm -rf obj-%{target}
