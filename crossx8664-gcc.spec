@@ -12,7 +12,7 @@ Name:		crossamd64-gcc
 #define		_snap	20040827
 Version:	3.4.2
 #Release:	0.%{_snap}.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -25,6 +25,7 @@ BuildRequires:	bison
 BuildRequires:	autoconf
 BuildRequires:	/bin/bash
 Requires:	crossamd64-binutils
+Requires:	gcc-dirs
 ExcludeArch:	amd64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
