@@ -5,13 +5,16 @@ Summary(pl):	Skro¶ne narzêdzia programistyczne GNU dla AMD64 - gcc
 Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - AMD64 gcc
 Summary(tr):	GNU geliþtirme araçlarý - AMD64 gcc
 Name:		crossamd64-gcc
-Version:	3.4.3
-Release:	2
+Version:	4.0.0
+%define		_snap	20050417
+Release:	0.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
-# Source0-md5:	e744b30c834360fccac41eb7269a3011
+#Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
+Source0:	ftp://gcc.gnu.org/pub/gcc/prerelease-%{version}-%{_snap}/gcc-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	99f114330f152939f0d9586010da176f
+Patch0:		gcc-pr20973.patch
 URL:		http://gcc.gnu.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -46,7 +49,9 @@ maszynach binariów do uruchamiania na AMD64 (architektura
 amd64-linux).
 
 %prep
-%setup -q -n gcc-%{version}
+#setup -q -n gcc-%{version}
+%setup -q -n gcc-%{version}-%{_snap}
+%patch0 -p1
 
 %build
 rm -rf obj-%{target}
@@ -85,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} -C obj-%{target} install-gcc \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install obj-%{target}/gcc/specs $RPM_BUILD_ROOT%{gcclib}
 
 # don't want this here
 rm -f $RPM_BUILD_ROOT%{_libdir}/libiberty.a
