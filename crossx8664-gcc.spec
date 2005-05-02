@@ -11,7 +11,7 @@ Epoch:		1
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
-# Source0-md5:	99f114330f152939f0d9586010da176f
+# Source0-md5:	55ee7df1b29f719138ec063c57b89db6
 Patch0:		gcc-pr20973.patch
 Patch1:		gcc-pr21173.patch
 URL:		http://gcc.gnu.org/
