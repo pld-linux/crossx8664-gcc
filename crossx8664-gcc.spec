@@ -1,10 +1,10 @@
-Summary:	Cross AMD64 GNU binary utility development utilities - gcc
-Summary(es):	Utilitarios para desarrollo de binarios de la GNU - AMD64 gcc
-Summary(fr):	Utilitaires de développement binaire de GNU - AMD64 gcc
-Summary(pl):	Skro¶ne narzêdzia programistyczne GNU dla AMD64 - gcc
-Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - AMD64 gcc
-Summary(tr):	GNU geliþtirme araçlarý - AMD64 gcc
-Name:		crossamd64-gcc
+Summary:	Cross x86-64 GNU binary utility development utilities - gcc
+Summary(es):	Utilitarios para desarrollo de binarios de la GNU - x86-64 gcc
+Summary(fr):	Utilitaires de développement binaire de GNU - x86-64 gcc
+Summary(pl):	Skro¶ne narzêdzia programistyczne GNU dla x86-64 - gcc
+Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - x86-64 gcc
+Summary(tr):	GNU geliþtirme araçlarý - x86-64 gcc
+Name:		crossx8664-gcc
 Version:	4.0.0
 Release:	1
 Epoch:		1
@@ -18,16 +18,17 @@ URL:		http://gcc.gnu.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	crossamd64-binutils
+BuildRequires:	crossx8664-binutils
 BuildRequires:	fileutils >= 4.1.41
 BuildRequires:	flex
+BuildRequires:	rpmbuild(macros) >= 1.211
 BuildRequires:	texinfo >= 4.1
-Requires:	crossamd64-binutils
+Requires:	crossx8664-binutils
 Requires:	gcc-dirs
-ExcludeArch:	amd64
+ExcludeArch:	%{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		target		amd64-pld-linux
+%define		target		x86_64-pld-linux
 %define		arch		%{_prefix}/%{target}
 %define		gccarch		%{_libdir}/gcc/%{target}
 %define		gcclib		%{gccarch}/%{version}
@@ -36,7 +37,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains a cross-gcc which allows the creation of
-binaries to be run on AMD64 linux (architecture amd64-linux) on
+binaries to be run on x86-64 linux (architecture x86_64-linux) on
 other machines.
 
 %description -l de
@@ -45,20 +46,20 @@ anderem Rechner Code für amd64-Linux zu generieren.
 
 %description -l pl
 Ten pakiet zawiera skro¶ny gcc pozwalaj±cy na robienie na innych
-maszynach binariów do uruchamiania na AMD64 (architektura
-amd64-linux).
+maszynach binariów do uruchamiania na x86-64 (architektura
+x86_64-linux).
 
 %package c++
-Summary:	C++ support for crossamd64-gcc
-Summary(pl):	Obs³uga C++ dla crossamd64-gcc
+Summary:	C++ support for crossx8664-gcc
+Summary(pl):	Obs³uga C++ dla crossx8664-gcc
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description c++
-This package adds C++ support to the GNU Compiler Collection for AMD64.
+This package adds C++ support to the GNU Compiler Collection for x86-64.
 
 %description c++ -l pl
-Ten pakiet dodaje obs³ugê C++ do kompilatora gcc dla AMD64.
+Ten pakiet dodaje obs³ugê C++ do kompilatora gcc dla x86-64.
 
 %prep
 %setup -q -n gcc-%{version}
