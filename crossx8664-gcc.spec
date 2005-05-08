@@ -5,15 +5,15 @@ Summary(pl):	Skro¶ne narzêdzia programistyczne GNU dla x86-64 - gcc
 Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - x86-64 gcc
 Summary(tr):	GNU geliþtirme araçlarý - x86-64 gcc
 Name:		crossx8664-gcc
-Version:	4.0.0
-Release:	1
+Version:	4.0.1
+%define		_snap	20050507
+Release:	0.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
-# Source0-md5:	55ee7df1b29f719138ec063c57b89db6
-Patch0:		gcc-pr20973.patch
-Patch1:		gcc-pr21173.patch
+#Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
+Source0:	ftp://gcc.gnu.org/pub/gcc/snapshots/4.0-%{_snap}/gcc-4.0-%{_snap}.tar.bz2
+# Source0-md5:	701f385de867d117f3648165174b254a
 URL:		http://gcc.gnu.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,6 +25,7 @@ BuildRequires:	rpmbuild(macros) >= 1.211
 BuildRequires:	texinfo >= 4.1
 Requires:	crossx8664-binutils
 Requires:	gcc-dirs
+Obsoletes:	crossamd64-gcc
 ExcludeArch:	%{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,9 +63,8 @@ This package adds C++ support to the GNU Compiler Collection for x86-64.
 Ten pakiet dodaje obs³ugê C++ do kompilatora gcc dla x86-64.
 
 %prep
-%setup -q -n gcc-%{version}
-%patch0 -p1
-%patch1 -p1
+#setup -q -n gcc-%{version}
+%setup -q -n gcc-4.0-%{_snap}
 
 %build
 rm -rf obj-%{target}
