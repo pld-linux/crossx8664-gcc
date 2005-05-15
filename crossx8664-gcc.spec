@@ -67,6 +67,7 @@ Ten pakiet dodaje obs³ugê C++ do kompilatora gcc dla x86-64.
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.* .
 rm -rf obj-%{target}
 install -d obj-%{target}
 cd obj-%{target}
