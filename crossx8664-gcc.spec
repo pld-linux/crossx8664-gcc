@@ -38,17 +38,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains a cross-gcc which allows the creation of
-binaries to be run on x86-64 linux (architecture x86_64-linux) on
-other machines.
+binaries to be run on x86-64 Linux on other machines.
 
 %description -l de
 Dieses Paket enthält einen Cross-gcc, der es erlaubt, auf einem
-anderem Rechner Code für amd64-Linux zu generieren.
+anderem Rechner Code für x64-64 Linux zu generieren.
 
 %description -l pl
 Ten pakiet zawiera skro¶ny gcc pozwalaj±cy na robienie na innych
-maszynach binariów do uruchamiania na x86-64 (architektura
-x86_64-linux).
+maszynach binariów do uruchamiania na Linuksie x86-64.
 
 %package c++
 Summary:	C++ support for crossx8664-gcc
@@ -124,6 +122,8 @@ cp -f	$gccdir/install-tools/include/*.h $gccdir/include
 rm -rf	$gccdir/install-tools
 
 %if 0%{!?debug:1}
+%{target}-strip -g $RPM_BUILD_ROOT%{gcclib}/32/libgcc.a
+%{target}-strip -g $RPM_BUILD_ROOT%{gcclib}/32/libgcov.a
 %{target}-strip -g $RPM_BUILD_ROOT%{gcclib}/libgcc.a
 %{target}-strip -g $RPM_BUILD_ROOT%{gcclib}/libgcov.a
 %endif
