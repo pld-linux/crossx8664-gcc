@@ -6,14 +6,15 @@ Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - x86-64 gcc
 Summary(tr):	GNU geliþtirme araçlarý - x86-64 gcc
 Name:		crossx8664-gcc
 Version:	4.0.1
-%define		_snap	20050507
+%define		_snap	20050514
 Release:	0.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
 #Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
 Source0:	ftp://gcc.gnu.org/pub/gcc/snapshots/4.0-%{_snap}/gcc-4.0-%{_snap}.tar.bz2
-# Source0-md5:	701f385de867d117f3648165174b254a
+# Source0-md5:	25e147473b14c4bb43cdc53299c3524c
+Patch0:		gcc-pr21454.patch
 URL:		http://gcc.gnu.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -63,6 +64,7 @@ Ten pakiet dodaje obs³ugê C++ do kompilatora gcc dla x86-64.
 %prep
 #setup -q -n gcc-%{version}
 %setup -q -n gcc-4.0-%{_snap}
+%patch0 -p1
 
 %build
 rm -rf obj-%{target}
