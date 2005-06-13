@@ -6,14 +6,14 @@ Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - x86-64 gcc
 Summary(tr):	GNU geliþtirme araçlarý - x86-64 gcc
 Name:		crossx8664-gcc
 Version:	4.0.1
-%define		_snap	20050521
+%define		_snap	20050609
 Release:	0.%{_snap}.1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
 #Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/gcc-%{version}.tar.bz2
 Source0:	ftp://gcc.gnu.org/pub/gcc/snapshots/4.0-%{_snap}/gcc-4.0-%{_snap}.tar.bz2
-# Source0-md5:	7f45e29a00590ce57a001a9294e8184e
+# Source0-md5:	3ba660302e1c4c09c878dcab822c9e3c
 URL:		http://gcc.gnu.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
