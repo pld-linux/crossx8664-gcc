@@ -42,7 +42,7 @@ binaries to be run on x86-64 Linux on other machines.
 
 %description -l de
 Dieses Paket enthält einen Cross-gcc, der es erlaubt, auf einem
-anderem Rechner Code für x64-64 Linux zu generieren.
+anderem Rechner Code für x86-64 Linux zu generieren.
 
 %description -l pl
 Ten pakiet zawiera skro¶ny gcc pozwalaj±cy na robienie na innych
