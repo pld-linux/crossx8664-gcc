@@ -99,7 +99,7 @@ TEXCONFIG=false \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} -C obj-%{target} install-gcc \
+%{__make} -C obj-%{target} -j1 install-gcc \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install obj-%{target}/gcc/specs $RPM_BUILD_ROOT%{gcclib}
