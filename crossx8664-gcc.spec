@@ -1,9 +1,9 @@
 Summary:	Cross x86-64 GNU binary utility development utilities - gcc
-Summary(es):	Utilitarios para desarrollo de binarios de la GNU - x86-64 gcc
-Summary(fr):	Utilitaires de développement binaire de GNU - x86-64 gcc
-Summary(pl):	Skro¶ne narzêdzia programistyczne GNU dla x86-64 - gcc
-Summary(pt_BR):	Utilitários para desenvolvimento de binários da GNU - x86-64 gcc
-Summary(tr):	GNU geliþtirme araçlarý - x86-64 gcc
+Summary(es.UTF-8):   Utilitarios para desarrollo de binarios de la GNU - x86-64 gcc
+Summary(fr.UTF-8):   Utilitaires de dÃ©veloppement binaire de GNU - x86-64 gcc
+Summary(pl.UTF-8):   SkroÅ›ne narzÄ™dzia programistyczne GNU dla x86-64 - gcc
+Summary(pt_BR.UTF-8):   UtilitÃ¡rios para desenvolvimento de binÃ¡rios da GNU - x86-64 gcc
+Summary(tr.UTF-8):   GNU geliÅŸtirme araÃ§larÄ± - x86-64 gcc
 Name:		crossx8664-gcc
 Version:	4.0.2
 Release:	1
@@ -38,25 +38,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package contains a cross-gcc which allows the creation of
 binaries to be run on x86-64 Linux on other machines.
 
-%description -l de
-Dieses Paket enthält einen Cross-gcc, der es erlaubt, auf einem
-anderem Rechner Code für x86-64 Linux zu generieren.
+%description -l de.UTF-8
+Dieses Paket enthÃ¤lt einen Cross-gcc, der es erlaubt, auf einem
+anderem Rechner Code fÃ¼r x86-64 Linux zu generieren.
 
-%description -l pl
-Ten pakiet zawiera skro¶ny gcc pozwalaj±cy na robienie na innych
-maszynach binariów do uruchamiania na Linuksie x86-64.
+%description -l pl.UTF-8
+Ten pakiet zawiera skroÅ›ny gcc pozwalajÄ…cy na robienie na innych
+maszynach binariÃ³w do uruchamiania na Linuksie x86-64.
 
 %package c++
 Summary:	C++ support for crossx8664-gcc
-Summary(pl):	Obs³uga C++ dla crossx8664-gcc
+Summary(pl.UTF-8):   ObsÅ‚uga C++ dla crossx8664-gcc
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description c++
 This package adds C++ support to the GNU Compiler Collection for x86-64.
 
-%description c++ -l pl
-Ten pakiet dodaje obs³ugê C++ do kompilatora gcc dla x86-64.
+%description c++ -l pl.UTF-8
+Ten pakiet dodaje obsÅ‚ugÄ™ C++ do kompilatora gcc dla x86-64.
 
 %prep
 %setup -q -n gcc-%{version}
